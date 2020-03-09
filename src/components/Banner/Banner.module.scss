@@ -1,0 +1,42 @@
+@import "../../strings/colors";
+.Banner{
+  width: 100vw;
+  height: 300px;
+  padding: 40px;
+  background: $accent2dark;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .Title{
+    font-size: 40px;
+    color: $accent1;
+    font-weight: 600;
+  }
+
+  .Title.small{
+    font-weight: 500;
+  }
+
+  button{
+    position: relative;
+    font-size: 18px;
+    width: 230px;
+    height: 40px;
+    outline: none;
+    border: 2px solid $accent1;
+    background: $accent1;
+    border-radius: 20px;
+    margin-top: 15px;
+    color: $accent2dark;
+    font-weight: 600;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform .1s ease-in-out;
+    z-index: 1;
+  }
+
+  button:active{
+    transform: scale(.9);
+  }
+}

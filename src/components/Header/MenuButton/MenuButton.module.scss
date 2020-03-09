@@ -1,0 +1,50 @@
+@import "../../../strings/colors";
+
+.MenuButton {
+  position: absolute;
+  margin-left: 35px;
+  width: 30px;
+  height: 30px;
+  margin-top: 35px;
+  cursor: pointer;
+  transition: transform .1s ease-in-out;
+
+  .Line {
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background: $background;
+    border-radius: 30px;
+    transition: transform .2s ease-in-out;
+    transform: rotate(0deg) translate3d(0px, 0px, 0px);
+
+  }
+
+  .Line.first {
+    margin-top: 0px;
+  }
+
+  .Line.first.open {
+    transform: rotate(45deg) translate3d(9px,9px,0)
+  }
+
+  .Line.second {
+    margin-top: 12.5px;
+  }
+
+  .Line.second.open {
+    display: none;
+  }
+
+  .Line.third {
+    margin-top: 25px;
+  }
+
+  .Line.third.open {
+    transform: rotate(-45deg) translate3d(8.5px,-8.5px,0)
+  }
+}
+
+.MenuButton.open {
+  transform: rotate(90deg);
+}
