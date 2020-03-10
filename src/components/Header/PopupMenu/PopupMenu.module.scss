@@ -1,7 +1,7 @@
 @import "../../../strings/colors";
 
 .PopupMenu {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: calc(100vh - 100px);
   margin-top: 100px;

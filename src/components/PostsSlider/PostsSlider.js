@@ -1,22 +1,34 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import classes from "./PostsSlider.module.scss"
+import {Swipeable} from "react-touch";
+import Post from "./Post/Post";
 
 const PostsSlider = () => {
 
     const [state, setState] = useState({
-        activePostId: 0
+        activePostId: 0,
+        interval: null
     });
 
-    useEffect(() => {
-        setInterval(() => {
+    let setSlideInterval = useCallback(()=>{
+        return setInterval(() => {
             setState(prevState => {
                 return {
                     ...prevState,
-                    activePostId: prevState.activePostId === 3 ? 0 : ++prevState.activePostId
+                    // activePostId: prevState.activePostId === 3 ? 0 : ++prevState.activePostId
                 }
             })
         }, 5000)
-    }, []);
+    },[]);
+
+    useEffect(() => {
+        setState(prevState => {
+            return{
+                ...prevState,
+                interval: setSlideInterval()
+            }
+        })
+    }, [setSlideInterval]);
 
     const postWrapCls = [classes.PostWrap];
 
@@ -39,12 +51,32 @@ const PostsSlider = () => {
 
     return (
         <div className={classes.PostsSlider}>
-            <div className={postWrapCls.join(" ")}>
-                <div className={classes.Post}>1</div>
-                <div className={classes.Post}>2</div>
-                <div className={classes.Post}>3</div>
-                <div className={classes.Post}>4</div>
-            </div>
+            <Swipeable onSwipeLeft={()=>{
+                clearInterval(state.interval);
+                setState(prevState => {
+                    return{
+                        ...prevState,
+                        activePostId: prevState.activePostId === 3 ? 3 : ++prevState.activePostId,
+                        interval: setSlideInterval()
+                    }
+                })
+            }} onSwipeRight={()=>{
+                clearInterval(state.interval);
+                setState(prevState => {
+                    return{
+                        ...prevState,
+                        activePostId: prevState.activePostId === 0 ? 0 : --prevState.activePostId,
+                        interval: setSlideInterval()
+                    }
+                })
+            }}>
+                <div className={postWrapCls.join(" ")}>
+                    <Post title="Неотложная помощь"/>
+                    <Post title="2"/>
+                    <Post title="3"/>
+                    <Post title="4"/>
+                </div>
+            </Swipeable>
             <div className={classes.Dots}>
                 {dots}
             </div>

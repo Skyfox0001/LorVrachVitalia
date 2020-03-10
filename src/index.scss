@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Vollkorn&display=swap');
+@import "strings/colors";
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  //font-family: 'Vollkorn', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -13,4 +16,5 @@ code {
 
 *{
   overflow-x: hidden;
+  color: $text-color;
 }

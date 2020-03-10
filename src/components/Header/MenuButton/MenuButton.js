@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React from 'react';
 import classes from "./MenuButton.module.scss"
 
 const MenuButton = ({isOpen, handleClick}) => {
