@@ -20,7 +20,6 @@ const Header = () => {
         })
     }, []);
 
-
     return (
         <>
             <div className={classes.Header}>

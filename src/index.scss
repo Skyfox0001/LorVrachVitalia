@@ -14,7 +14,12 @@ code {
     monospace;
 }
 
+.root{
+  overflow: hidden;
+}
+
 *{
+  user-select: none;
   overflow-x: hidden;
   color: $text-color;
 }

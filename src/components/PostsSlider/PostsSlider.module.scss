@@ -31,20 +31,20 @@
   .Dots{
     position: relative;
     margin: 10px auto;
-    width: 60px;
-    height: 10px;
+    width: 80px;
+    height: 20px;
     display: flex;
     justify-content: space-between;
 
     .Dot{
-      width: 10px;
+      width: 15px;
       height: 10px;
       background: $accent2;
-      border-radius: 10px;
+      border-radius: 4px;
     }
 
     .Dot.open{
-      background: $accent1;
+      background: $accent2light;
     }
   }
 }

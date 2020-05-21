@@ -15,7 +15,7 @@ const PostsSlider = () => {
             setState(prevState => {
                 return {
                     ...prevState,
-                    // activePostId: prevState.activePostId === 3 ? 0 : ++prevState.activePostId
+                    activePostId: prevState.activePostId === 3 ? 0 : ++prevState.activePostId
                 }
             })
         }, 5000)
@@ -72,9 +72,9 @@ const PostsSlider = () => {
             }}>
                 <div className={postWrapCls.join(" ")}>
                     <Post title="Неотложная помощь"/>
-                    <Post title="2"/>
-                    <Post title="3"/>
-                    <Post title="4"/>
+                    <Post title="Заболевания носа"/>
+                    <Post title="Заболевания уха"/>
+                    <Post title="Заболевания горла"/>
                 </div>
             </Swipeable>
             <div className={classes.Dots}>
