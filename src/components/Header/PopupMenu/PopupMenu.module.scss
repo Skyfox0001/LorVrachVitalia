@@ -14,3 +14,49 @@
 .PopupMenu.open {
   margin-left: 0vw;
 }
+.menuLinks {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  color: white;
+  text-align: left;
+}
+.element{
+  padding-left: 40px;
+  width: 60vw;
+  height: 60px;
+  line-height: 60px;
+  color : white;
+  text-decoration: none;
+
+}
+.element>a{
+  height: inherit;
+  display: block;
+  text-align: left;
+  overflow: hidden;
+  font-size: 24px;
+  text-decoration: none;
+  color : white;
+
+}
+
+.line{
+  width: 100vw;
+  display: block;
+  height: 1px;
+  background-color: white;
+  margin-top: calc(100vh - 345px);
+  text-align: right;
+}
+.contacts{
+  width: 100vw;
+  height: 60px;
+  overflow: hidden;
+
+}
+.contacts>p{
+  text-align: right;
+  margin-right: 50px;
+  color: lightgray;
+  font-size: 18px;
+}
